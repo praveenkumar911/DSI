@@ -180,7 +180,7 @@ export default function Profile() {
                 e.preventDefault();
                 console.log("first")
                 try {
-                  const response = await fetch("http://localhost:5001/api/profile/update", {
+                  const response = await fetch("https://pl-api.iiit.ac.in/rcts/dsi-demo1/api/profile/update", {
                     method: "PUT",
                     headers: {
                       "Content-Type": "application/json",

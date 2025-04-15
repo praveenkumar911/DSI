@@ -13,7 +13,7 @@ const Dashboard = () => {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5001/dashboard/notes")
+    fetch("https://pl-api.iiit.ac.in/rcts/dsi-demo1/dashboard/notes")
       .then((res) => res.json())
       .then((data) => {
         const loadedNotes = {};
@@ -32,7 +32,7 @@ const Dashboard = () => {
     }));
 
     if (!notes[day]?.id) {
-      const response = await fetch("http://localhost:5001/dashboard/save", {
+      const response = await fetch("https://pl-api.iiit.ac.in/rcts/dsi-demo1/dashboard/save", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -52,7 +52,7 @@ const Dashboard = () => {
 
   const handleUpdate = async (day) => {
     if (notes[day]?.id) {
-      await fetch(`http://localhost:5001/dashboard/update/${notes[day].id}`, {
+      await fetch(`https://pl-api.iiit.ac.in/rcts/dsi-demo1/dashboard/update/${notes[day].id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ note: notes[day].note }),
@@ -63,7 +63,7 @@ const Dashboard = () => {
 
   const handleDelete = async (day) => {
     if (notes[day]?.id) {
-      await fetch(`http://localhost:5001/dashboard/delete/${notes[day].id}`, {
+      await fetch(`https://pl-api.iiit.ac.in/rcts/dsi-demo1/dashboard/delete/${notes[day].id}`, {
         method: "DELETE",
       });
       setNotes((prevNotes) => {

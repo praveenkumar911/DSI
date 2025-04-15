@@ -11,7 +11,7 @@ const Classesroom = () => {
 
   const fetchStudents = (className) => {
     setLoading(true);
-    fetch(`http://localhost:5001/api/classes/getClasses/${className}`)
+    fetch(`https://pl-api.iiit.ac.in/rcts/dsi-demo1/api/classes/getClasses/${className}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch students");
@@ -67,7 +67,7 @@ const Classesroom = () => {
 
   const handleSave = () => {
     if (editStudent) {
-      fetch(`http://localhost:5001/api/students/update/${editStudent._id}`, {
+      fetch(`https://pl-api.iiit.ac.in/rcts/dsi-demo1/api/students/update/${editStudent._id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -99,7 +99,7 @@ const Classesroom = () => {
   };
 
   const handleDeleteStudent = (studentId) => {
-    fetch(`http://localhost:5001/api/students/delete/${studentId}`, {
+    fetch(`https://pl-api.iiit.ac.in/rcts/dsi-demo1/api/students/delete/${studentId}`, {
       method: "DELETE",
     })
       .then((response) => response.json())
@@ -119,7 +119,7 @@ const Classesroom = () => {
   };
 
   const handlePromoteStudent = (studentId) => {
-    fetch(`http://localhost:5001/api/students/promote/${studentId}`, {
+    fetch(`https://pl-api.iiit.ac.in/rcts/dsi-demo1/api/students/promote/${studentId}`, {
       method: "PATCH",
     })
       .then((response) => response.json())

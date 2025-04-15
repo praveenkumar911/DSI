@@ -17,14 +17,14 @@ const LessonPlans = () => {
 
   useEffect(() => {
     // Fetch skills from the backend
-    fetch('http://localhost:5001/api/lessons/getSkills')
+    fetch('https://pl-api.iiit.ac.in/rcts/dsi-demo1/api/lessons/getSkills')
       .then(response => response.json())
       .then(data => setSkills(data.skills))
       .catch(error => console.error('Error fetching skills:', error));
   }, []);
 
   const fetchStudents = (className) => {
-    fetch(`http://localhost:5001/api/classes/getClasses/${className}`)
+    fetch(`https://pl-api.iiit.ac.in/rcts/dsi-demo1/api/classes/getClasses/${className}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch students");
@@ -78,7 +78,7 @@ const LessonPlans = () => {
 
     console.log("Sending data:", lessonData); // For debugging
 
-    fetch('http://localhost:5001/api/lessons/newLesson', {
+    fetch('https://pl-api.iiit.ac.in/rcts/dsi-demo1/api/lessons/newLesson', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -125,7 +125,7 @@ const LessonPlans = () => {
     }
   
     try {
-      const response = await fetch('http://localhost:5001/api/lessons/getLessons', {
+      const response = await fetch('https://pl-api.iiit.ac.in/rcts/dsi-demo1/api/lessons/getLessons', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,

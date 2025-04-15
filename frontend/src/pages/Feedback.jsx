@@ -13,7 +13,7 @@ const ClassProgressReport = () => {
       const fetchStudents = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:5001/api/classes/getClasses/${selectedStandard}`
+            `https://pl-api.iiit.ac.in/rcts/dsi-demo1/api/classes/getClasses/${selectedStandard}`
           );
           if (response.data.students && response.data.students.length > 0) {
             const initializedStudents = response.data.students.map((student) => ({
@@ -66,7 +66,7 @@ const ClassProgressReport = () => {
       }));
 
       const response = await axios.post(
-        "http://localhost:5001/api/feedback/saveProgress",
+        "https://pl-api.iiit.ac.in/rcts/dsi-demo1/api/feedback/saveProgress",
         { students: studentsData }
       );
 

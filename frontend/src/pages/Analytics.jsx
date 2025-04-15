@@ -39,7 +39,7 @@ function Analytics() {
       const fetchStudents = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:5001/api/classes/getClasses/${selectedStandard}`
+            `https://pl-api.iiit.ac.in/rcts/dsi-demo1/api/classes/getClasses/${selectedStandard}`
           );
           setStudents(response.data.students || []);
         } catch (error) {
@@ -64,7 +64,7 @@ function Analytics() {
       const fetchStudentData = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:5001/api/student/${selectedStudent}`
+            `https://pl-api.iiit.ac.in/rcts/dsi-demo1/api/student/${selectedStudent}`
           );
           const { marks, performance, feedback } = response.data;
           setStudentData({
