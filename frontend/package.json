@@ -1,5 +1,6 @@
 {
   "name": "dsi_frontend",
+  "homepage": "https://pl-app.iiit.ac.in/rcts/dsi-demo1",
   "private": true,
   "version": "0.0.0",
   "type": "module",
