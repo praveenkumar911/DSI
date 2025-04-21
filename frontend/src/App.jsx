@@ -16,7 +16,7 @@ import Classesroom from "./pages/Classesroom";
 const router = createBrowserRouter([
   // Auth routes (without layout)
   {
-    path: "/",
+    path: "/rcts/dsi-demo1",
     element: <Login />,
   },
   {
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
   },
   // Protected routes (with RootLayout)
   {
-    path: "/",
+    path: "/rcts/dsi-demo1",
     element: <RootLayout />,
     errorElement: <ErrorPage />,
     children: [
